@@ -1,9 +1,9 @@
 {
   "version": "0.1.0",
-  "author": "antonino.visalli@gmail.com",
-  "name": "p3e",
+  "author": "development@fluidnext.com",
+  "name": "player",
   "description": "Polymer 3 in an electron application",
-  "repository": "git@github.com:visa4/p3e.git",
+  "repository": "git@github.com:fluidnext/player.git",
   "license": "BSD-3-Clause",
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -31,7 +31,7 @@
     "tsc-es6": "tsc  -p lib/es6"
   },
   "dependencies": {
-    "@p3e/library": "git+https://github.com/visa4/p3e-library.git",
+    "@fluidnext/library": "git+https://github.com/fluidnext/library.git",
     "@polymer/app-layout": "^3.0.2",
     "@polymer/app-localize-behavior": "^3.0.1",
     "@polymer/app-media": "^3.0.1",

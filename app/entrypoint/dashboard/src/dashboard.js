@@ -1,7 +1,7 @@
-import {Application} from '@p3e/library/src/core/Application';
-import {Module} from '@p3e/library/src/core/module/Module';
-import {Container} from  '@p3e/library/src/container/Container';
-import {Localize} from '@p3e/library/src/localize/Localize';
+import {Application} from '@fluidnext/library/src/core/Application';
+import {Module} from '@fluidnext/library/src/core/module/Module';
+import {Container} from  '@fluidnext/library/src/container/Container';
+import {Localize} from '@fluidnext/library/src/localize/Localize';
 
 process.env.APP_ENVIRONMENT = process.env.APP_ENVIRONMENT === undefined ? 'production' : process.env.APP_ENVIRONMENT;
 

@@ -3,14 +3,14 @@ import '@polymer/polymer/lib/elements/dom-repeat.js';
 import '@polymer/paper-menu-button/paper-menu-button';
 import '@polymer/paper-listbox/paper-listbox';
 import '@polymer/paper-item/paper-item';
-import {P3ELocalizeElement} from "../p3e-localize";
+import {FLUIDNEXTLocalizeElement} from "../fluidnext-localize";
 import {lang} from "./language/language.js";
 
 /**
  * @customElement
  * @polymer
  */
-export class P3ESelectLanguage extends P3ELocalizeElement {
+export class FLUIDNEXTSelectLanguage extends FLUIDNEXTLocalizeElement {
 
     static get template() {
         return html`
@@ -58,4 +58,4 @@ export class P3ESelectLanguage extends P3ELocalizeElement {
     }
 }
 
-window.customElements.define('p3e-select-language', P3ESelectLanguage);
+window.customElements.define('fluidnext-select-language', FLUIDNEXTSelectLanguage);

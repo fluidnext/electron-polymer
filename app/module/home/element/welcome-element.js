@@ -1,12 +1,12 @@
 import {html} from '@polymer/polymer/polymer-element.js';
-import {P3ELocalizeElement} from "../../../elements/localize/p3e-localize";
+import {FLUIDNEXTLocalizeElement} from "../../../elements/localize/fluidnext-localize";
 import {lang} from './language/language.js';
 
 /**
  * @customElement
  * @polymer
  */
-class WelcomeElement extends P3ELocalizeElement {
+class WelcomeElement extends FLUIDNEXTLocalizeElement {
     static get template() {
         return html`
             <div class="container">

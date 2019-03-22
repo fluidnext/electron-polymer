@@ -16,7 +16,7 @@
     "!app/config/config.json.dist",
     "app/main.js",
     "node_modules/@polymer/**/*.js",
-    "node_modules/@p3e/**/*.*"
+    "node_modules/@fluidnext/**/*.*"
   ],
   "extraDependencies": [
     "package.json",

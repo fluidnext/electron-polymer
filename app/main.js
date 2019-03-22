@@ -75,7 +75,7 @@ class Application {
             titleBarStyle: 'hidden',
             autoHideMenuBar: true,
             icon: path.join(__dirname, 'style/icon/logo.png'),
-            title: `P3E`,
+            title: `FLUIDNEXT`,
             width: 500,
             height: 1200
         });

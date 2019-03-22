@@ -1,7 +1,7 @@
 /**
  *
  */
-class Config extends require("@p3e/library").container.ContainerAware {
+class Config extends require("@fluidnext/library").container.ContainerAware {
     init() {
 
         this.getContainer().get('Test').then(function (service) {

@@ -1,14 +1,14 @@
-import {P3EServiceInjectorElement} from '../service/p3e-service-injector';
+import {FLUIDNEXTServiceInjectorElement} from '../service/fluidnext-service-injector';
 import {AppLocalizeBehavior} from '@polymer/app-localize-behavior/app-localize-behavior.js';
 import {mixinBehaviors} from '@polymer/polymer/lib/legacy/class.js';
-import {Localize} from '@p3e/library/src/localize/Localize';
-import {Listener} from '@p3e/library/src/event/Listener';
+import {Localize} from '@fluidnext/library/src/localize/Localize';
+import {Listener} from '@fluidnext/library/src/event/Listener';
 
 /**
  * @customElement
  * @polymer
  */
-export class P3ELocalizeElement extends mixinBehaviors([AppLocalizeBehavior], P3EServiceInjectorElement) {
+export class FLUIDNEXTLocalizeElement extends mixinBehaviors([AppLocalizeBehavior], FLUIDNEXTServiceInjectorElement) {
 
     static get properties () {
         return {

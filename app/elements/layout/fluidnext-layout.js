@@ -1,5 +1,5 @@
 import {html} from '@polymer/polymer/polymer-element.js';
-import {P3ELocalizeElement} from '../localize/p3e-localize';
+import {FLUIDNEXTLocalizeElement} from '../localize/fluidnext-localize';
 import '@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-layout/app-header/app-header.js'
@@ -8,14 +8,14 @@ import '@polymer/iron-icons/iron-icons';
 import '@polymer/iron-pages/iron-pages';
 import '@polymer/paper-icon-button/paper-icon-button.js'
 import '@polymer/paper-tooltip/paper-tooltip.js'
-import '../localize/select/p3e-select-language.js'
-import { flexStyle } from '../../style/layout-style'
+import '../localize/select/fluidnext-select-language.js'
+import {flexStyle} from '../../style/layout-style'
 import {lang} from './language/language.js';
 /**
  * @customElement
  * @polymer
  */
-class P3ELayout extends P3ELocalizeElement {
+class FLUIDNEXTLayout extends FLUIDNEXTLocalizeElement {
 
     static get template() {
         return html`
@@ -55,7 +55,7 @@ class P3ELayout extends P3ELocalizeElement {
                 <app-header reveals>
                     <app-toolbar>
                         <div main-title>{{localize('nameApp')}}</div>
-                        <p3e-select-language></p3e-select-language>
+                        <fluidnext-select-language></fluidnext-select-language>
                         <paper-icon-button id="buttonDrawer" icon="icons:account-circle" on-click="_tapDrawer"></paper-icon-button>
                     </app-toolbar>
                 </app-header>
@@ -147,4 +147,4 @@ class P3ELayout extends P3ELocalizeElement {
     }
 }
 
-window.customElements.define('p3e-layout', P3ELayout);
+window.customElements.define('fluidnext-layout', FLUIDNEXTLayout);

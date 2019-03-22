@@ -1,7 +1,7 @@
 /**
  *
  */
-class HomeService extends require("@p3e/library").container.Container {
+class HomeService extends require("@fluidnext/library").container.Container {
 
 }
 

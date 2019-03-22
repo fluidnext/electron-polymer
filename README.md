@@ -1,6 +1,6 @@
-# P3E
+# FLUIDNEXT
 
-P3E is a starter kit to start an electron project with [Polymer 3 ](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview)
+FLUIDNEXT is a starter kit to start an electron project with [Polymer 3 ](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview)
 
 ## Install
 

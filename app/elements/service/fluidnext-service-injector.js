@@ -4,7 +4,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
  * @customElement
  * @polymer
  */
-export class P3EServiceInjectorElement extends PolymerElement {
+export class FLUIDNEXTServiceInjectorElement extends PolymerElement {
 
     static get properties () {
         return {

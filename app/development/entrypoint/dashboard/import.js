@@ -8,5 +8,5 @@ import '../../../style/app-style';
 import '../../../module/home/index'
 import '../../../module/help/demo-element'
 
-import '../../../elements/layout/p3e-layout'
+import '../../../elements/layout/fluidnext-layout'
 import '../../../entrypoint/dashboard/src/dashboard'

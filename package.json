@@ -94,7 +94,7 @@
       "output": "../../../releases"
     },
     "win": {
-      "legalTrademarks": "P3E",
+      "legalTrademarks": "FluidNext",
       "asar": false
     }
   },

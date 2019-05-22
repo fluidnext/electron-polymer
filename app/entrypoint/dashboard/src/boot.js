@@ -61,10 +61,29 @@ const application = new Application();
 application.setBasePath(basePath)
     .setModulePath(modulePath)
     .setResourcePath(resourcePath)
-    .setSlash(slash)
     .loadModules(modulesHydrate, container);
 
 container.set('Application', application);
+
+application.getEventManager().on(
+    Application.BOOTSTRAP_MODULE,
+    (evt) => {
+
+        if (document.body) {
+            let applicationElement = document.createElement('application-layout');
+            document.body.appendChild(applicationElement);
+        } else {
+            window.addEventListener('DOMContentLoaded', (event) => {
+                let applicationElement = document.createElement('application-layout');
+                document.body.appendChild(applicationElement);
+            });
+        }
+    }
+);
+
+
+
+
 
 /**
  * Load application in global scope

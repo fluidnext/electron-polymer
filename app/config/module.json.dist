@@ -4,14 +4,14 @@
     "name": "home",
     "icon" : "icons:apps",
     "webComponentEntryPointName" : "home-index",
-    "webComponentEntryPointNameFile" : "home-index.js"
+    "webComponentEntryPointNameFile" : "index.js"
   },
   {
     "title" : "Help",
     "name": "help",
     "icon" : "icons:help",
     "webComponentEntryPointName" : "help-index",
-    "webComponentEntryPointNameFile" : "help-index.js"
+    "webComponentEntryPointNameFile" : "index.js"
   }
 ]
 

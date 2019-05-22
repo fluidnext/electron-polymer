@@ -1,4 +1,5 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {timeOut} from '@polymer/polymer/lib/utils/async';
 
 /**
  * @customElement
@@ -9,16 +10,54 @@ export class ApplicationServiceInjectorElement extends PolymerElement {
     static get properties () {
         return {
             services: {
-                type: String,
-                reflectToAttribute: true
+                type: Object,
+                observer: 'changeServices'
             }
         };
     }
 
-    ready() {
-        super.ready();
-        if (this.services !== undefined) {
-            //console.log('services', this.services);
+    /**
+     * @param newValue
+     */
+    changeServices(newValue) {
+        if (!newValue) {
+            return;
+        }
+
+        this._searchService(newValue);
+    }
+
+    /**
+     * @param services
+     * @param container
+     * @private
+     */
+    _searchService(services, subContainer) {
+
+        if (services === null || typeof services !== 'object') {
+            return;
+        }
+
+        for (let property in services) {
+
+            switch (true) {
+                case typeof services[property] === 'object' && container.has(property):
+                    this._searchService(services[property], container.get(property));
+                    break;
+                default:
+                    if (container.has(services[property])) {
+                        container.getAsync(services[property])
+                            .then((service) => {
+                                this[property] = service;
+                            });
+                    } else if (subContainer) {
+                        subContainer.getAsync(services[property])
+                            .then((service) => {
+                                this[property] = service;
+                            });
+                    }
+                    break;
+            }
         }
     }
 }

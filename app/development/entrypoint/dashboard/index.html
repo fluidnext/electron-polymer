@@ -7,14 +7,25 @@
     <script src="../../../../node_modules/web-animations-js/web-animations-next-lite.min.js"></script>
     <script>
         require('@babel/register')({
-            presets: ['@babel/preset-env'],
-            plugins: ["@babel/plugin-syntax-dynamic-import"],
+            presets: [
+                [
+                    '@babel/preset-env',
+                    {
+                        "targets": {
+                            "node": "10"
+                        }
+                    }],
+
+            ],
+            plugins: [
+                "@babel/plugin-syntax-dynamic-import"
+            ],
             ignore: []
         });
+
         require('./import.js')
     </script>
 </head>
 <body>
-    <application-layout services="Application"></application-layout>
 </body>
 </html>

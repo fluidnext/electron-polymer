@@ -23,11 +23,7 @@ export class ApplicationLocalizeElement extends mixinBehaviors([AppLocalizeBehav
     ready() {
         super.ready();
 
-        if (window.container) {
-            window.container.get('Localize').then(function (service) {
-                this._setLocalizeService(service)
-            }.bind(this));
-        }
+        this._setLocalizeService(window.container.get('Localize'));
     }
 
     /**

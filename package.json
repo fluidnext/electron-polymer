@@ -31,13 +31,13 @@
     "tsc-es6": "tsc  -p lib/es6"
   },
   "dependencies": {
-    "@fluidnext/library": "git+https://github.com/fluidnext/library.git",
     "@fluidnext-polymer/paper-autocomplete": "github:fluidnext/paper-autocomplete#master",
     "@fluidnext-polymer/paper-chip": "github:fluidnext/paper-chip#master",
     "@fluidnext-polymer/paper-grid": "github:fluidnext/paper-grid#master",
     "@fluidnext-polymer/paper-input-color": "github:fluidnext/paper-input-color#master",
     "@fluidnext-polymer/paper-input-file": "github:fluidnext/paper-input-file#master",
     "@fluidnext-polymer/paper-pagination": "github:fluidnext/paper-pagination#master",
+    "@fluidnext/library": "git+https://github.com/fluidnext/library.git#master",
     "@polymer/app-layout": "^3.0.2",
     "@polymer/app-localize-behavior": "^3.0.1",
     "@polymer/app-media": "^3.0.1",

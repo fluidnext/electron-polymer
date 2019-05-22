@@ -98,6 +98,16 @@ class ApplicationLayout extends ApplicationLocalizeElement {
                 notify: true,
                 observer: 'changeModules'
             },
+
+            services : {
+                value : {
+                    application:  "Application"
+                }
+            },
+
+            application :  {
+                observer: 'changeApplicationService'
+            }
         }
     }
 
@@ -108,12 +118,17 @@ class ApplicationLayout extends ApplicationLocalizeElement {
 
     ready() {
         super.ready();
+    }
 
-        if (window.container) {
-            window.container.get('Application').then((service) => {
-                this.modules = service.getModules();
-            });
+    /**
+     * @param newValue
+     */
+    changeApplicationService(newValue) {
+        if (!newValue) {
+            return;
         }
+
+        this.modules = newValue.getModules();
     }
 
     /**

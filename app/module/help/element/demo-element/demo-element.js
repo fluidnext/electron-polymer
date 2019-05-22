@@ -87,6 +87,7 @@ class DemoElement extends PolymerElement {
                 .paper-badge {
                     width: fit-content;
                     display: inline-block;
+                    padding-top: 30px;
                     margin-left: 5px;
                     margin-right: 30px;
                 }
@@ -144,12 +145,14 @@ class DemoElement extends PolymerElement {
                 
             </style>
             <div class="container">
-                <div class="paper-badge" tabindex="0">
-                    <span>paper badge</span>
-                    <paper-badge icon="icons:apps" label="happy"></paper-badge>
-                </div>
                 <div class="paper-button section" tabindex="1">
                     <paper-button>paper button</paper-button>
+                </div>
+                <div class="paper-badge" tabindex="0">
+                    <div>
+                        <span>paper badge</span>
+                        <paper-badge icon="icons:apps" label="happy"></paper-badge>
+                    </div>
                 </div>
                 <div class="paper-card section" tabindex="2">
                     <paper-card heading="Emmental" image="http://placehold.it/300x100/FFC107/000000" alt="Emmental">

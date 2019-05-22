@@ -1,5 +1,5 @@
 import {html} from '@polymer/polymer/polymer-element.js';
-import {FLUIDNEXTLocalizeElement} from '../localize/fluidnext-localize';
+import {ApplicationLocalizeElement} from '../localize/application-localize';
 import '@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-layout/app-header/app-header.js'
@@ -8,14 +8,14 @@ import '@polymer/iron-icons/iron-icons';
 import '@polymer/iron-pages/iron-pages';
 import '@polymer/paper-icon-button/paper-icon-button.js'
 import '@polymer/paper-tooltip/paper-tooltip.js'
-import '../localize/select/fluidnext-select-language.js'
+import '../localize/select/application-select-language.js'
 import {flexStyle} from '../../style/layout-style'
 import {lang} from './language/language.js';
 /**
  * @customElement
  * @polymer
  */
-class FLUIDNEXTLayout extends FLUIDNEXTLocalizeElement {
+class ApplicationLayout extends ApplicationLocalizeElement {
 
     static get template() {
         return html`
@@ -55,7 +55,7 @@ class FLUIDNEXTLayout extends FLUIDNEXTLocalizeElement {
                 <app-header reveals>
                     <app-toolbar>
                         <div main-title>{{localize('nameApp')}}</div>
-                        <fluidnext-select-language></fluidnext-select-language>
+                        <application-select-language></application-select-language>
                         <paper-icon-button id="buttonDrawer" icon="icons:account-circle" on-click="_tapDrawer"></paper-icon-button>
                     </app-toolbar>
                 </app-header>
@@ -147,4 +147,4 @@ class FLUIDNEXTLayout extends FLUIDNEXTLocalizeElement {
     }
 }
 
-window.customElements.define('fluidnext-layout', FLUIDNEXTLayout);
+window.customElements.define('application-layout', ApplicationLayout);

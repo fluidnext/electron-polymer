@@ -6,7 +6,7 @@ import '@polymer/polymer/lib/elements/dom-repeat';
 import '../../../style/app-style';
 
 import '../../../module/home/index'
-import '../../../module/help/demo-element'
+import '../../../module/help/index'
 
-import '../../../elements/layout/fluidnext-layout'
-import '../../../entrypoint/dashboard/src/dashboard'
+import '../../../elements/layout/application-layout'
+import '../../../entrypoint/dashboard/src/boot'

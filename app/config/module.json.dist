@@ -3,15 +3,15 @@
     "title" : "Home",
     "name": "home",
     "icon" : "icons:apps",
-    "webComponentEntryPointName" : "welcome-element",
-    "webComponentEntryPointNameFile" : "welcome-element.js"
+    "webComponentEntryPointName" : "home-index",
+    "webComponentEntryPointNameFile" : "home-index.js"
   },
   {
     "title" : "Help",
     "name": "help",
     "icon" : "icons:help",
-    "webComponentEntryPointName" : "demo-element",
-    "webComponentEntryPointNameFile" : "demo-element.js"
+    "webComponentEntryPointName" : "help-index",
+    "webComponentEntryPointNameFile" : "help-index.js"
   }
 ]
 

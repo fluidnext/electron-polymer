@@ -1,4 +1,4 @@
-import {FLUIDNEXTServiceInjectorElement} from '../service/fluidnext-service-injector';
+import {ApplicationServiceInjectorElement} from '../service/application-service-injector';
 import {AppLocalizeBehavior} from '@polymer/app-localize-behavior/app-localize-behavior.js';
 import {mixinBehaviors} from '@polymer/polymer/lib/legacy/class.js';
 import {Localize} from '@fluidnext/library/src/localize/Localize';
@@ -8,7 +8,7 @@ import {Listener} from '@fluidnext/library/src/event/Listener';
  * @customElement
  * @polymer
  */
-export class FLUIDNEXTLocalizeElement extends mixinBehaviors([AppLocalizeBehavior], FLUIDNEXTServiceInjectorElement) {
+export class ApplicationLocalizeElement extends mixinBehaviors([AppLocalizeBehavior], ApplicationServiceInjectorElement) {
 
     static get properties () {
         return {

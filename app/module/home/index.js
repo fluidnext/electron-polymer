@@ -12,5 +12,5 @@ class HomeIndex extends PolymerElement {
         `;
     }
 }
-window.customElements.define('welcome-index', HomeIndex);
+window.customElements.define('home-index', HomeIndex);
 

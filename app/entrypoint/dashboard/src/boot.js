@@ -8,11 +8,10 @@ process.env.APP_ENVIRONMENT = process.env.APP_ENVIRONMENT === undefined ? 'produ
 const fs = require('fs');
 const path = require('path');
 const back = process.env.APP_ENVIRONMENT === 'development' ? '/../../../' : '/../../';
-const slash = window.navigator.appVersion.indexOf('Win') != -1 ? '\\' : '/';
 
 const basePath = path.normalize(`${__dirname}${back}`);
-const modulePath = path.normalize(`${__dirname}${back}module${slash}`);
-const resourcePath = path.normalize(`${__dirname}${back}storage${slash}`);
+const modulePath = path.normalize(`${__dirname}${back}module${path.sep}`);
+const resourcePath = path.normalize(`${__dirname}${back}storage${path.sep}`);
 
 /**
  * Container service of application
@@ -22,7 +21,7 @@ const resourcePath = path.normalize(`${__dirname}${back}storage${slash}`);
 const container = new Container();
 
 const config =  JSON.parse(
-    fs.readFileSync(`${basePath}config${slash}config-${process.env.APP_ENVIRONMENT}.json`).toString()
+    fs.readFileSync(`${basePath}config${path.sep}config-${process.env.APP_ENVIRONMENT}.json`).toString()
 );
 /***********************************************************************************************************************
                                                CONFIG SERVICE
@@ -45,7 +44,7 @@ container.set('Test', {'name': 'test'});
 /***********************************************************************************************************************
                                              APPLICATION SERVICE
  **********************************************************************************************************************/
-let modules = JSON.parse(fs.readFileSync(`${basePath}config${slash}module.json`).toString());
+let modules = JSON.parse(fs.readFileSync(`${basePath}config${path.sep}module.json`).toString());
 // TODO refactor after the introduction of the hydrator module
 let modulesHydrate = [];
 for (let cont = 0; modules.length > cont; cont++) {

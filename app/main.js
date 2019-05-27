@@ -46,13 +46,7 @@ class Application {
      * @private
      */
     _getEntryPoint() {
-        let entryPoint = 'entrypoint/dashboard/index.html';
-        switch (this.environment) {
-            case 'development':
-                entryPoint = `development/${entryPoint}`;
-                break;
-        }
-        return entryPoint;
+        return `${this.environment === 'development' ?  'development' : 'entrypoint'}/dashboard/index.html`
     }
 
     /**

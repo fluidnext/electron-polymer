@@ -1,12 +1,12 @@
 import {html} from '@polymer/polymer/polymer-element.js';
-import {ApplicationLocalizeElement} from "../../../elements/localize/application-localize";
+import {ApplicationLocalizeElement} from "../../../../elements/localize/application-localize";
 import {lang} from './language/language.js';
 
 /**
  * @customElement
  * @polymer
  */
-class WelcomeElement extends ApplicationLocalizeElement {
+class PaperDashboard extends ApplicationLocalizeElement {
     static get template() {
         return html`
             <div class="container">
@@ -20,5 +20,5 @@ class WelcomeElement extends ApplicationLocalizeElement {
         this.resources = lang;
     }
 }
-window.customElements.define('welcome-element', WelcomeElement);
+window.customElements.define('paper-dashboard', PaperDashboard);
 

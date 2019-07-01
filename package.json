@@ -12,10 +12,10 @@
     "@babel/register": "^7.4.0",
     "@types/source-map": "^0.5.7",
     "devtron": "^1.4.0",
-    "electron": "4.0.5",
+    "electron": "5.0.6",
     "electron-builder": "~20.39.0",
-    "polymer-cli": "^1.9.7",
-    "typescript": "^3.3.4000",
+    "polymer-cli": "^1.9.10",
+    "typescript": "^3.5.2",
     "wct-browser-legacy": "^1.0.0"
   },
   "scripts": {
@@ -31,12 +31,12 @@
     "tsc-es6": "tsc  -p lib/es6"
   },
   "dependencies": {
-    "@fluidnext-polymer/paper-autocomplete": "github:fluidnext/paper-autocomplete#master",
-    "@fluidnext-polymer/paper-chip": "github:fluidnext/paper-chip#master",
-    "@fluidnext-polymer/paper-grid": "github:fluidnext/paper-grid#master",
-    "@fluidnext-polymer/paper-input-color": "github:fluidnext/paper-input-color#master",
-    "@fluidnext-polymer/paper-input-file": "github:fluidnext/paper-input-file#master",
-    "@fluidnext-polymer/paper-pagination": "github:fluidnext/paper-pagination#master",
+    "@fluidnext-polymer/paper-autocomplete": "^3.1.1",
+    "@fluidnext-polymer/paper-chip": "^3.1.2",
+    "@fluidnext-polymer/paper-grid": "^3.0.2",
+    "@fluidnext-polymer/paper-input-color": "^3.1.1",
+    "@fluidnext-polymer/paper-input-file": "^3.1.0",
+    "@fluidnext-polymer/paper-pagination": "^3.0.2",
     "@fluidnext/library": "git+https://github.com/fluidnext/library.git#master",
     "@polymer/app-layout": "^3.0.2",
     "@polymer/app-localize-behavior": "^3.0.1",
@@ -66,13 +66,13 @@
     "@polymer/paper-toast": "^3.0.1",
     "@polymer/paper-toggle-button": "^3.0.1",
     "@polymer/paper-tooltip": "^3.0.1",
-    "@polymer/polymer": "^3.1.0",
+    "@polymer/polymer": "^3.3.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "image-capture": "^0.4.0",
     "paper-collapse-item": "^4.0.5",
     "source-map-support": "^0.5.11",
-    "web-animations-js": "^2.3.1",
-    "webrtc-adapter": "^7.2.1"
+    "web-animations-js": "^2.3.2",
+    "webrtc-adapter": "^7.2.4"
   },
   "build": {
     "appId": "fluidnext.app",

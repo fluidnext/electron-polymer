@@ -30,7 +30,7 @@ import '@webcomponents/webcomponentsjs/';
  * @customElement
  * @polymer
  */
-class DemoElement extends PolymerElement {
+class PaperDemo extends PolymerElement {
 
 
     static get properties() {
@@ -293,4 +293,4 @@ class DemoElement extends PolymerElement {
     }
 }
 
-window.customElements.define('demo-element', DemoElement);
+window.customElements.define('paper-demo', PaperDemo);

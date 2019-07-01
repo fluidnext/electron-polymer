@@ -1,5 +1,8 @@
 import {Application} from '@fluidnext/library/src/core/Application';
 import {Module} from '@fluidnext/library/src/core/module/Module';
+import {WebComponent} from '@fluidnext/library/src/core/webcomponent/WebComponent';
+import {PropertyHydrator} from '@fluidnext/library/src/hydrator/index';
+import {HydratorStrategy, PathStrategy} from '@fluidnext/library/src/hydrator/strategy/value/index';
 import {Container} from  '@fluidnext/library/src/container/Container';
 import {Localize} from '@fluidnext/library/src/localize/Localize';
 
@@ -44,15 +47,19 @@ container.set('Test', {'name': 'test'});
 /***********************************************************************************************************************
                                              APPLICATION SERVICE
  **********************************************************************************************************************/
-let modules = JSON.parse(fs.readFileSync(`${basePath}config${path.sep}module.json`).toString());
-// TODO refactor after the introduction of the hydrator module
+
+let hydratorWebComponent = new PropertyHydrator(new WebComponent());
+hydratorWebComponent.addValueStrategy('path',  new PathStrategy());
+
+let hydratorModule = new PropertyHydrator(new Module());
+hydratorModule.addValueStrategy('autoloadsWs', new HydratorStrategy(hydratorWebComponent));
+hydratorModule.addValueStrategy('entryPoint', new HydratorStrategy(hydratorWebComponent));
+
+let modules = JSON.parse(fs.readFileSync(`${basePath}${path.sep}config${path.sep}module.json`).toString());
 let modulesHydrate = [];
+
 for (let cont = 0; modules.length > cont; cont++) {
-    let module = new Module();
-    for (var property in modules[cont]) {
-        module[property] = modules[cont][property];
-    }
-    modulesHydrate.push(module);
+    modulesHydrate.push(hydratorModule.hydrate(modules[cont]));
 }
 
 const application = new Application();
@@ -68,21 +75,17 @@ application.getEventManager().on(
     Application.BOOTSTRAP_MODULE,
     (evt) => {
 
+        let applicationElement = document.createElement('application-layout');
+        applicationElement.section = 'dashboard'
         if (document.body) {
-            let applicationElement = document.createElement('application-layout');
             document.body.appendChild(applicationElement);
         } else {
             window.addEventListener('DOMContentLoaded', (event) => {
-                let applicationElement = document.createElement('application-layout');
                 document.body.appendChild(applicationElement);
             });
         }
     }
 );
-
-
-
-
 
 /**
  * Load application in global scope

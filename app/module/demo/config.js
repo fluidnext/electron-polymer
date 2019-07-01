@@ -3,9 +3,9 @@
  */
 class Config extends require("@fluidnext/library").container.ContainerAware {
     init() {
-        this.getContainer().set('HomeService', new HomeService());
+
+        this.getContainer().set('DemoService', new DemoService());
     }
 }
-
 
 module.exports = Config;

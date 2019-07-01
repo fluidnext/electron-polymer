@@ -1,16 +1,16 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
-import './element/welcome-element';
+import './element/paper-demo/paper-demo';
 
 /**
  * @customElement
  * @polymer
  */
-class HomeIndex extends PolymerElement {
+class DemoIndex extends PolymerElement {
     static get template() {
         return html`
-           <welcome-element></welcome-element>
+           <paper-demo></paper-demo>
         `;
     }
 }
-window.customElements.define('home-index', HomeIndex);
+window.customElements.define('demo-index', DemoIndex);
 

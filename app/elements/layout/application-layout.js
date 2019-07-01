@@ -52,7 +52,7 @@ class ApplicationLayout extends ApplicationLocalizeElement {
            
              </style>
              <app-header-layout fullbleed>
-                <app-header reveals>
+                <app-header slot="header" fixed condenses effects="waterfall">
                     <app-toolbar>
                         <div main-title>{{localize('nameApp')}}</div>
                         <application-select-language></application-select-language>
@@ -64,7 +64,7 @@ class ApplicationLayout extends ApplicationLocalizeElement {
                         <dom-repeat id="menu" items="{{modules}}" as="module">
                             <template>
                                 <paper-icon-button id="{{module.name}}" icon="{{module.icon}}" on-tap="_tapMenu"></paper-icon-button>
-                                <paper-tooltip for="{{module.name}}" position="right" animation-delay="400" animation-entry="scale-up-animation">{{module.name}}</paper-tooltip>
+                                <paper-tooltip for="{{module.name}}" position="right">{{module.title}}</paper-tooltip>
                             </template>
                         </dom-repeat>
                     </div>
@@ -89,8 +89,7 @@ class ApplicationLayout extends ApplicationLocalizeElement {
 
             section: {
                 type: String,
-                notify: true,
-                value: 'home'
+                notify: true
             },
 
             modules: {
@@ -155,7 +154,7 @@ class ApplicationLayout extends ApplicationLocalizeElement {
         }
 
         for (let cont = 0; this.modules.length > cont; cont++) {
-            let elem = document.createElement(this.modules[cont].getWebComponentEntryPointName());
+            let elem = document.createElement(this.modules[cont].getEntryPoint().getName());
             elem.name = this.modules[cont].getName();
             this.$.pages.appendChild(elem);
         }

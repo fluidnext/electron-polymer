@@ -1,18 +1,40 @@
 [
   {
-    "title" : "Home",
-    "name": "home",
-    "icon" : "icons:apps",
-    "webComponentEntryPointName" : "home-index",
-    "webComponentEntryPointNameFile" : "index.js"
+    "title" : "Dashboard",
+    "name": "dashboard",
+    "icon" : "dashboard:menu",
+    "configEntryPoint": "config.js",
+    "entryPoint" : {
+      "name" : "dashboard-index",
+      "path" : "index.js"
+    },
+    "autoloads" : [
+      "src/DashboardService.js"
+    ],
+    "autoloadsWs": [
+      {
+        "name" : "dashboard-icons",
+        "path" : "element/icons/icons.js"
+      }
+    ]
   },
   {
-    "title" : "Help",
-    "name": "help",
-    "icon" : "icons:help",
-    "webComponentEntryPointName" : "help-index",
-    "webComponentEntryPointNameFile" : "index.js"
+    "title" : "Demo",
+    "name": "demo",
+    "icon" : "demo:menu",
+    "configEntryPoint": "config.js",
+    "entryPoint" : {
+      "name" : "demo-index",
+      "path" : "index.js"
+    },
+    "autoloads" : [
+      "src/DemoService.js"
+    ],
+    "autoloadsWs": [
+      {
+        "name" : "demo-icons",
+        "path" : "element/icons/icons.js"
+      }
+    ]
   }
 ]
-
-

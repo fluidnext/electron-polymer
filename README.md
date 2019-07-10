@@ -7,6 +7,9 @@ this flow ensures that the services and web components are loaded before the app
 
 The structure of a module is:
 
+![alt text](https://github.com/fluidnext/electron-polymer/blob/master/doc/image/module-structure.png)
+
+
 ## Install
 
 [Npm](https://www.npmjs.com/get-npm) is required to install the project, once the repository has been cloned run:

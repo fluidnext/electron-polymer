@@ -7,7 +7,7 @@ this flow ensures that the services and web components are loaded before the app
 
 The structure of a module is:
 
-![alt text](https://github.com/fluidnext/electron-polymer/blob/master/doc/image/module-structure.png)
+![module structure](https://raw.githubusercontent.com/fluidnext/electron-polymer/master/doc/image/module-strucure.png)
 
 
 ## Install

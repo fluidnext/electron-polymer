@@ -2,18 +2,25 @@ import '../../style/app-style';
 import '../../elements/layout/application-layout'
 
 /**
- * Dashboard module
+ * start dashboard
  */
 import '../../module/dashboard/index'
 import '../../module/dashboard/element/icons/icons'
+/**
+ * end dashboard
+ */
 
 /**
- * Demo module
+ * start demo
  */
 import '../../module/demo/index'
 import '../../module/demo/element/icons/icons'
-
 /**
- * Boot application module
+ * end demo
+ */
+     
+/**
+ * boot application
  */
 import '../../entrypoint/dashboard/src/boot'
+

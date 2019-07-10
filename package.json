@@ -10,6 +10,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.1",
     "@babel/register": "^7.4.0",
+    "@fluidnext/electron-polymer-cli": "github:fluidnext/electron-polymer-cli#master",
     "@types/source-map": "^0.5.7",
     "devtron": "^1.4.0",
     "electron": "5.0.6",

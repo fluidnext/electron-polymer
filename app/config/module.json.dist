@@ -1,40 +1,40 @@
 [
-  {
-    "title" : "Dashboard",
-    "name": "dashboard",
-    "icon" : "dashboard:menu",
-    "configEntryPoint": "config.js",
-    "entryPoint" : {
-      "name" : "dashboard-index",
-      "path" : "index.js"
+    {
+        "title": "Dashboard",
+        "name": "dashboard",
+        "icon": "dashboard:menu",
+        "configEntryPoint": "config.js",
+        "entryPoint": {
+            "name": "dashboard-index",
+            "path": "index.js"
+        },
+        "autoloads": [
+            "src/DashboardService.js"
+        ],
+        "autoloadsWs": [
+            {
+                "name": "dashboard-icons",
+                "path": "element/icons/icons.js"
+            }
+        ]
     },
-    "autoloads" : [
-      "src/DashboardService.js"
-    ],
-    "autoloadsWs": [
-      {
-        "name" : "dashboard-icons",
-        "path" : "element/icons/icons.js"
-      }
-    ]
-  },
-  {
-    "title" : "Demo",
-    "name": "demo",
-    "icon" : "demo:menu",
-    "configEntryPoint": "config.js",
-    "entryPoint" : {
-      "name" : "demo-index",
-      "path" : "index.js"
-    },
-    "autoloads" : [
-      "src/DemoService.js"
-    ],
-    "autoloadsWs": [
-      {
-        "name" : "demo-icons",
-        "path" : "element/icons/icons.js"
-      }
-    ]
-  }
+    {
+        "title": "Demo",
+        "name": "demo",
+        "icon": "demo:menu",
+        "configEntryPoint": "config.js",
+        "entryPoint": {
+            "name": "demo-index",
+            "path": "index.js"
+        },
+        "autoloads": [
+            "src/DemoService.js"
+        ],
+        "autoloadsWs": [
+            {
+                "name": "demo-icons",
+                "path": "element/icons/icons.js"
+            }
+        ]
+    }
 ]

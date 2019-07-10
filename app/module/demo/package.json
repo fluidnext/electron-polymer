@@ -1,0 +1,19 @@
+{
+    "title": "Demo",
+    "name": "demo",
+    "icon": "demo:menu",
+    "configEntryPoint": "config.js",
+    "entryPoint": {
+        "name": "demo-index",
+        "path": "index.js"
+    },
+    "autoloads": [
+        "src/DemoService.js"
+    ],
+    "autoloadsWs": [
+        {
+            "name": "demo-icons",
+            "path": "element/icons/icons.js"
+        }
+    ]
+}

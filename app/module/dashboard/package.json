@@ -1,0 +1,19 @@
+{
+    "title": "Dashboard",
+    "name": "dashboard",
+    "icon": "dashboard:menu",
+    "configEntryPoint": "config.js",
+    "entryPoint": {
+        "name": "dashboard-index",
+        "path": "index.js"
+    },
+    "autoloads": [
+        "src/DashboardService.js"
+    ],
+    "autoloadsWs": [
+        {
+            "name": "dashboard-icons",
+            "path": "element/icons/icons.js"
+        }
+    ]
+}

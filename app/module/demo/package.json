@@ -10,7 +10,7 @@
     "autoloads": [
         "src/DemoService.js"
     ],
-    "autoloadsWs": [
+    "autoloadsWc": [
         {
             "name": "demo-icons",
             "path": "element/icons/icons.js"

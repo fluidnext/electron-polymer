@@ -1,10 +1,12 @@
 # FLUIDNEXT
 
-FLUIDNEXT is a starter kit to start an electron project with [Polymer 3 ](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview)
+FLUIDNEXT is a starter kit to start an electron project with [Polymer 3 ](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview).
+The core of the application use [fluid library](https://github.com/fluidnext/library).
 
-The application are modular, before launch the [application](https://github.com/fluidnext/electron-polymer/blob/master/app/elements/layout/application-layout.js) all the modules are loaded.
+The application are modular, before launch the [application](https://github.com/fluidnext/electron-polymer/blob/master/app/elements/layout/application-layout.js) 
+all the modules are loaded. This flow ensures that the services and web components are loaded before the application starts.
 
-This flow ensures that the services and web components are loaded before the application starts.
+![application life cicle](https://raw.githubusercontent.com/fluidnext/electron-polymer/master/doc/image/life-cicle.png)
 
 The structure of a Module is:
 
@@ -25,7 +27,7 @@ This structure is respected in the relative package.json
     "autoloads": [
         "src/DashboardService.js"
     ],
-    "autoloadsWs": [
+    "autoloadsWc": [
         {
             "name": "dashboard-icons",
             "path": "element/icons/icons.js"
@@ -57,7 +59,7 @@ This structure is respected in the relative package.json
 
 - AUTOLOADS
 
-    Array of the ES6 path file that are load global in the application by their name class.
+    Array of the ES6 path file that are load global in the application by their name class (you can call the class from the developer tool writing the name of the class to the command line).
 
 - AUTOLOADSWS
 

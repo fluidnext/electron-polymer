@@ -11,7 +11,7 @@
         "autoloads": [
             "src/DashboardService.js"
         ],
-        "autoloadsWs": [
+        "autoloadsWc": [
             {
                 "name": "dashboard-icons",
                 "path": "element/icons/icons.js"
@@ -30,7 +30,7 @@
         "autoloads": [
             "src/DemoService.js"
         ],
-        "autoloadsWs": [
+        "autoloadsWc": [
             {
                 "name": "demo-icons",
                 "path": "element/icons/icons.js"

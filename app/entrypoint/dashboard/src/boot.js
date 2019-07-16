@@ -40,9 +40,16 @@ container.set('Localize', new Localize(
 ));
 
 /***********************************************************************************************************************
-                                                TEST SERVICE
+                                                GLOBAL SERVICE
  **********************************************************************************************************************/
-container.set('Test', {'name': 'test'});
+class GlobalService {
+
+    globalInterface() {
+        return 'globalInterface';
+    }
+}
+
+container.set('GlobalService', new GlobalService());
 
 /***********************************************************************************************************************
                                              APPLICATION SERVICE
@@ -52,7 +59,7 @@ let hydratorWebComponent = new PropertyHydrator(new WebComponent());
 hydratorWebComponent.addValueStrategy('path',  new PathStrategy());
 
 let hydratorModule = new PropertyHydrator(new Module());
-hydratorModule.addValueStrategy('autoloadsWs', new HydratorStrategy(hydratorWebComponent));
+hydratorModule.addValueStrategy('autoloadsWc', new HydratorStrategy(hydratorWebComponent));
 hydratorModule.addValueStrategy('entryPoint', new HydratorStrategy(hydratorWebComponent));
 
 let modules = JSON.parse(fs.readFileSync(`${basePath}${path.sep}config${path.sep}module.json`).toString());

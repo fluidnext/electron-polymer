@@ -1,14 +1,16 @@
-# FLUIDNEXT
+# ElectronPolymer
 
-FLUIDNEXT is a starter kit to start an electron project with [Polymer 3 ](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview).
-The core of the application use [fluid library](https://github.com/fluidnext/library).
+ElectronPolymer is a starter kit that allows the creation of an [Electron](https://github.com/fluidnext/electron-polymer/blob/master/app/elements/layout/application-layout.js) 
+project with [Polymer 3 ](https://polymer-library.polymer-project.org/3.0/docs/devguide/feature-overview).
+The core of the application uses [fluid library](https://github.com/fluidnext/library).
 
-The application are modular, before launch the [application](https://github.com/fluidnext/electron-polymer/blob/master/app/elements/layout/application-layout.js) 
+The application is modular, before launching the [application](https://github.com/fluidnext/electron-polymer/blob/master/app/elements/layout/application-layout.js) 
 all the modules are loaded. This flow ensures that the services and web components are loaded before the application starts.
+The entry point of the application is [boot.js](https://github.com/fluidnext/electron-polymer/blob/master/app/entrypoint/dashboard/src/boot.js) where all the services are located
 
 ![application life cicle](https://raw.githubusercontent.com/fluidnext/electron-polymer/master/doc/image/life-cicle.png)
 
-The structure of a Module is:
+The structure of a Module is as seen below:
 
 ![module structure](https://raw.githubusercontent.com/fluidnext/electron-polymer/master/doc/image/module-strucure.png)
 
@@ -37,42 +39,46 @@ This structure is respected in the relative package.json
 
 ```
 
-- TITLE
+- *TITLE*
 
-    The title of the module use to view in the application.
+    The module label.
 
-- NAME
+- *NAME*
 
-    The name of the module  **MUST BE** unique.
+    The label of the module  **MUST BE** unique.
 
-- ICON
+- *ICON*
 
-    The name of the iron icon use in the menu.
+    The label of the iron icon used in the menu.
 
-- CONFIGENTRYPOINT
+- *CONFIGENTRYPOINT*
 
-    The name of the file that load al services for this module.  **MUST BE** implements the method init().
+    The label of the class (file) that loads all the services for this module. The class **MUST IMPLEMENT** the method init().
 
-- ENTRYPOINT
+- *ENTRYPOINT*
 
-    The object that contain the information (name and path) of the webcomponent use to entrypoint of the module.
+    The object that contains the information (name and path) of the webcomponent. The webcomponent is used as the entrypoint of the module.
 
-- AUTOLOADS
+- *AUTOLOADS*
 
-    Array of the ES6 path file that are load global in the application by their name class (you can call the class from the developer tool writing the name of the class to the command line).
+    Array of the ES6 class that are loaded globally in the application by their name class (you can call the class from the developer tool writing the name of the class on the command line).
 
-- AUTOLOADSWS
+- *AUTOLOADSWS*
 
-    Array of object (name and path) of the web component that are load to the browser.
+    Array of objects (name and path) of the web component that are loaded to the browser.
 
 The flow of loading a module is as follows (the steps are loaded synchronously):
 
-1. load entrypoint
-2. load autoloads
-3. load autoloads
-3. load configentrypoint
+1. load wc entry point
+2. load ES6 object
+3. load web components
+3. load config
 
-After the load of all module are loaded the application. To help the developers you can use the [cli](https://github.com/fluidnext/electron-polymer-cli)
+After all the modules have loaded the application triggers the event ***bootstrap-module***.
+The application listens to the event and creates the [applicationt-layout](https://github.com/fluidnext/electron-polymer/blob/master/app/elements/layout/application-layout.js) 
+which is attacted to the DOM.
+ 
+To help the developers you can use the [cli](https://github.com/fluidnext/electron-polymer-cli).
 
 ## Install
 

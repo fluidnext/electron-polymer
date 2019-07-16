@@ -83,7 +83,7 @@ application.getEventManager().on(
     (evt) => {
 
         let applicationElement = document.createElement('application-layout');
-        applicationElement.section = 'dashboard'
+        applicationElement.section = 'dashboard';
         if (document.body) {
             document.body.appendChild(applicationElement);
         } else {

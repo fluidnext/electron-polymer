@@ -66,8 +66,8 @@ class Application {
             webPreferences: {
                 nodeIntegration: true,
             },
-            titleBarStyle: 'hidden',
-            autoHideMenuBar: true,
+            // titleBarStyle: 'hidden',
+            // autoHideMenuBar: true,
             icon: path.join(__dirname, 'style/icon/logo.png'),
             title: `FLUIDNEXT`,
             width: 500,

@@ -36,5 +36,21 @@
                 "path": "element/icons/icons.js"
             }
         ]
+    },
+    {
+        "title": "Admin",
+        "name": "admin",
+        "icon": "admin:menu",
+        "configEntryPoint": "config.js",
+        "entryPoint": {
+            "name": "admin-index",
+            "path": "index.js"
+        },
+        "autoloadsWc": [
+            {
+                "name": "admin-icons",
+                "path": "element/icons/icons.js"
+            }
+        ]
     }
 ]

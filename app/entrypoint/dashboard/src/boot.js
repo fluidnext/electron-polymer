@@ -5,6 +5,8 @@ import {PropertyHydrator} from '@fluidnext/library/src/hydrator/index';
 import {HydratorStrategy, PathStrategy} from '@fluidnext/library/src/hydrator/strategy/value/index';
 import {Container} from  '@fluidnext/library/src/container/Container';
 import {Localize} from '@fluidnext/library/src/localize/Localize';
+import {Acl} from '@fluidnext/library/src/permission/acl/Acl';
+import {JsAclAdapter} from '@fluidnext/library/src/permission/acl/adapter/JsAclAdapter';
 
 process.env.APP_ENVIRONMENT = process.env.APP_ENVIRONMENT === undefined ? 'production' : process.env.APP_ENVIRONMENT;
 
@@ -50,6 +52,17 @@ class GlobalService {
 }
 
 container.set('GlobalService', new GlobalService());
+
+const jsAcl = new (require('js-acl'))();
+
+//All these actions you also can do in the middle of app execution
+jsAcl.addRole('guest');
+jsAcl.addRole('admin', 'guest');
+
+const aclService = new Acl(new JsAclAdapter(jsAcl));
+aclService.setRole('guest');
+
+container.set('Acl', aclService);
 
 /***********************************************************************************************************************
                                              APPLICATION SERVICE

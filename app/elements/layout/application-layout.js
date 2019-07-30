@@ -1,5 +1,7 @@
-import {html} from '@polymer/polymer/polymer-element.js';
-import {ApplicationLocalizeElement} from '../localize/application-localize';
+import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {ServiceInjectorMixin} from "../mixin/service/injector-mixin";
+import {LocalizeMixin} from "../mixin/localize/localize-mixin";
+import {AclMixin} from "../mixin/acl/acl-mixin";
 import '@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-layout/app-header/app-header.js'
@@ -8,14 +10,14 @@ import '@polymer/iron-icons/iron-icons';
 import '@polymer/iron-pages/iron-pages';
 import '@polymer/paper-icon-button/paper-icon-button.js'
 import '@polymer/paper-tooltip/paper-tooltip.js'
-import '../localize/select/application-select-language.js'
+import '../paper-select-language/paper-select-language';
 import {flexStyle} from '../../style/layout-style'
 import {lang} from './language/language.js';
 /**
  * @customElement
  * @polymer
  */
-class ApplicationLayout extends ApplicationLocalizeElement {
+class ApplicationLayout extends AclMixin(LocalizeMixin(ServiceInjectorMixin(PolymerElement))) {
 
     static get template() {
         return html`
@@ -55,7 +57,7 @@ class ApplicationLayout extends ApplicationLocalizeElement {
                 <app-header slot="header" fixed condenses effects="waterfall">
                     <app-toolbar>
                         <div main-title>{{localize('nameApp')}}</div>
-                        <application-select-language></application-select-language>
+                        <paper-select-language></paper-select-language>
                         <paper-icon-button id="buttonDrawer" icon="icons:account-circle" on-click="_tapDrawer"></paper-icon-button>
                     </app-toolbar>
                 </app-header>
@@ -63,8 +65,10 @@ class ApplicationLayout extends ApplicationLocalizeElement {
                     <div class="layout-vertical layout-center-aligned layout-menu">
                         <dom-repeat id="menu" items="{{modules}}" as="module">
                             <template>
-                                <paper-icon-button id="{{module.name}}" icon="{{module.icon}}" on-tap="_tapMenu"></paper-icon-button>
-                                <paper-tooltip for="{{module.name}}" position="right">{{module.title}}</paper-tooltip>
+                                <template is="dom-if" if="{{isAllowed(module.name)}}">
+                                    <paper-icon-button id="{{module.name}}" icon="{{module.icon}}" on-tap="_tapMenu"></paper-icon-button>
+                                    <paper-tooltip for="{{module.name}}" position="right">{{module.title}}</paper-tooltip>
+                                </template>
                             </template>
                         </dom-repeat>
                     </div>
@@ -100,11 +104,19 @@ class ApplicationLayout extends ApplicationLocalizeElement {
 
             services : {
                 value : {
-                    application:  "Application"
+                    _application:  "Application",
+                    _aclService: 'Acl',
+                    _localizeService: 'Localize'
                 }
             },
 
-            application :  {
+            /**
+             * @type Application
+             */
+            _application :  {
+                type: Object,
+                readOnly: true,
+                notify: true,
                 observer: 'changeApplicationService'
             }
         }

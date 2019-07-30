@@ -20,6 +20,15 @@ import '../../module/demo/element/icons/icons'
  */
          
 /**
+ * start admin
+ */
+import '../../module/admin/index'
+import '../../module/admin/element/icons/icons'
+/**
+ * end admin
+ */
+ 
+/**
  * boot application
  */
 import '../../entrypoint/dashboard/src/boot'

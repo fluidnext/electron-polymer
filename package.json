@@ -17,8 +17,7 @@
     "electron-builder": "~20.39.0",
     "polymer-cli": "^1.9.10",
     "typescript": "^3.5.2",
-    "wct-browser-legacy": "^1.0.0",
-    "js-acl": "^1.0.0"
+    "wct-browser-legacy": "^1.0.0"
   },
   "scripts": {
     "postinstall": "cp app/config/config.json.dist app/config/config-development.json && cp app/config/config.json.dist app/config/config-production.json && cp app/config/module.json.dist app/config/module.json",
@@ -28,7 +27,7 @@
     "postpolymer-build": "mv build/es6bundle/package.json build/es6bundle/app && cp app/style/icon/logo.png build/es6bundle/app/icon.png",
     "start-pre-build": "electron ./build/es6bundle/app/main.js --inspect=5858",
     "test": "polymer test",
-    "dist": "cd build/es6bundle/app && electron-builder -c.extraMetadata.main=main.js -w --x64",
+    "dist": "electron-builder --project build/es6bundle/app/ -c.extraMetadata.main=main.js -w --x64",
     "tsc-commonjs": "tsc  -p lib/commonjs",
     "tsc-es6": "tsc  -p lib/es6"
   },
@@ -70,11 +69,9 @@
     "@polymer/paper-tooltip": "^3.0.1",
     "@polymer/polymer": "^3.3.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "image-capture": "^0.4.0",
     "paper-collapse-item": "^4.0.5",
-    "source-map-support": "^0.5.11",
     "web-animations-js": "^2.3.2",
-    "webrtc-adapter": "^7.2.4"
+    "js-acl": "^1.0.0"
   },
   "build": {
     "appId": "fluidnext.app",
@@ -89,10 +86,6 @@
       "entrypoint/**/*",
       "elements/**/*",
       "manifest.json",
-      {
-        "from": "../node_modules",
-        "to": "../node_modules"
-      },
       {
         "from": "../lib",
         "to": "../lib"

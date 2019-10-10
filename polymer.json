@@ -7,22 +7,23 @@
     ]
   },
   "sources": [
-    "lib/**/*.js",
-    "app/elements/**.js",
-    "app/style/**",
-    "app/entrypoint/**",
-    "app/module/**",
-    "app/config/**",
+    "app/style/**/*",
+    "app/entrypoint/**/*",
+    "app/elements/**/*",
+    "app/module/**/*",
+    "app/config/**/*",
     "!app/config/config.json.dist",
     "app/main.js",
-    "node_modules/@polymer/**/*.js",
-    "node_modules/@fluidnext/**/*.*"
+    "app/node_modules/@polymer/**/*.*",
+    "app/node_modules/@fluidnext/**/*.*",
+    "app/node_modules/@fluidnext-polymer/**/*.*",
+    "app/node_modules/paper-collapse-item/**/*.*"
   ],
   "extraDependencies": [
-    "package.json",
+    "app/package.json",
     "app/manifest.json",
-    "node_modules/web-animations-js/web-animations-next-lite.min.js",
-    "node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"
+    "app/node_modules/web-animations-js/**/*",
+    "app/node_modules/@webcomponents/**/*"
   ],
   "builds": [
     {
